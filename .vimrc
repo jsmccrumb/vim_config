@@ -54,7 +54,13 @@ map <silent> <leader><cr> :noh<cr>
 " statusline stuff
 set laststatus=2
 
-set statusline+=%{FugitiveStatusline()}
+set statusline=%f                                " filename                                                                                                                                                  
+set statusline+=%m                               " modified flag
+set statusline+=%r                               " readonly flag
+set statusline+=\                                " spacer                                                                                                                                            
+set statusline+=%4l/%-4L                         " line / lines minwidth 4
+set statusline+=%=                               " switch to right side
+set statusline+=%{FugitiveStatusline()}          " indicator including the current branch and the currently edited file's commit
 
 
 " vim-javascript
